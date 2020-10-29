@@ -6,7 +6,6 @@ import pe.edu.upc.greatstorage.repository.IProductoDAO;
 import pe.edu.upc.greatstorage.service.IProductoService;
 import pe.edu.upc.greatstorage.model.Producto;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 

@@ -40,13 +40,13 @@
                     <a class="nav-link" th:href="@{/productos}">&nbsp;Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">&nbsp;Proveedores</a>
+                    <a class="nav-link" th:href="@{/proveedores}">&nbsp;Proveedores</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link">&nbsp;Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">&nbsp;Ingresos</a>
+                    <a class="nav-link" th:href="@{/ingresos}">&nbsp;Ingresos</a>
                 </li>
             </ul>
             <form>
@@ -82,11 +82,11 @@
                      th:errors="*{nombreProducto}"></div>
             </div>
 
-            <div class="form-group text-left">
+            <div class="form-group text-left" name="categoriadiv">
                 <label for="formcontrolcategoria">Categoria</label>
-                <select class="form-control" id="formcontrolcategoria" th:field="*{categoria.idCategoria}">
+                <select class="form-control" id="formcontrolcategoria" th:field="*{categoria.idCategoria}" name="listacat" onchange="Asignar()">
                     <option th:each="Categoria: ${listacategorias}" th:value="${Categoria.idCategoria}"
-                    th:text="${Categoria.nombreCategoria}" th:selected="(${Categoria.idCategoria} == *{categoria.idCategoria})"></option>
+                    th:text="${Categoria.nombreCategoria}" th:selected="(${Categoria.idCategoria} == *{categoria.idCategoria})" id="formcontrolvaluecategoria"></option>
                 </select>
             </div>
 

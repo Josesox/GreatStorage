@@ -1,0 +1,12 @@
+package pe.edu.upc.greatstorage.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import pe.edu.upc.greatstorage.model.Ingreso;
+
+import java.util.List;
+
+@Repository
+public interface IIngresoDAO extends CrudRepository<Ingreso,Long> {
+    List<Ingreso> findAllByOrderByIdIngresoAsc();
+}

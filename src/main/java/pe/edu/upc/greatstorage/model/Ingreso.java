@@ -7,6 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -69,8 +70,8 @@ public class Ingreso implements Serializable {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
+    public void setFechaIngreso(@NotEmpty(message = "No puede dejar este campo vacio") @Past(message = "Fecha invalida") Date localDate) {
+        this.fechaIngreso = localDate;
     }
 
     public TipoComprobante getTipocomprobante() {
